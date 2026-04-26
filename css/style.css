@@ -1,26 +1,61 @@
-@media screen and (max-width:1400px){
-    #clock-number > span:nth-child(4),#system-second {
-        display:none;
+/* ===================================
+   导航栏样式优化
+   =================================== */
+
+nav.navbar {
+    min-height: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+nav.navbar .navbar-brand {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+/* ===================================
+   响应式设计
+   =================================== */
+
+/* 中等屏幕尺寸下的时钟显示优化 */
+@media screen and (max-width: 1400px) {
+    #clock-number > span:nth-child(4),
+    #system-second {
+        display: none;
+    }
+    
+    #clock-number {
+        font-size: 1.5em;
     }
 }
 
-@media screen and (max-width:1228px){
-    #card-body{
-        display: flex;
-        align-content: center;
+/* 小屏幕尺寸下的卡片布局优化 */
+@media screen and (max-width: 1228px) {
+    #card-body {
         flex-direction: column;
+        text-align: center;
+    }
+    
+    #card-body > div:last-child {
         align-items: center;
     }
 }
 
-a{
+/* ===================================
+   链接样式和动画效果
+   =================================== */
+
+a {
     overflow: hidden;
+    position: relative; /* 为伪元素定位做准备 */
 }
-a:hover{
+
+a:hover {
     font-weight: bolder;
 }
 
-a:before{
+/* 链接底部边框动画 */
+a:before {
     content: "";
     width: 100%;
     height: 100%;
@@ -31,11 +66,13 @@ a:before{
     transition: all 0.5s;
     clip-path: margin-box;
 }
-a:hover:before{
+
+a:hover:before {
     right: 0;
 }
 
-a:after{
+/* 链接顶部边框动画 */
+a:after {
     content: "";
     width: 100%;
     height: 100%;
@@ -46,17 +83,70 @@ a:after{
     transition: all 0.5s;
     clip-path: margin-box;
 }
-a:hover:after{
+
+a:hover:after {
     left: 0;
 }
 
+/* ===================================
+   时钟组件样式
+   =================================== */
 
-#clock-number{
-    min-width: 93px;
-    font-size: 1.7em;
-    font-weight: bolder;
+#card-body {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* 时钟图标和文字之间的间距 */
 }
 
-#date{
-    min-width: 149px;
+#card-body > div:first-child {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0; /* 防止时钟图标被压缩 */
+}
+
+#card-body > div:last-child {
+    flex: 1; /* 文字区域占据剩余空间 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem; /* 时间、日期、星期之间的间距 */
+}
+
+#clock-number {
+    display: flex;
+    justify-content: center;
+    font-size: 1.23em;
+    font-weight: bolder;
+    letter-spacing: 2px; /* 增加字符间距 */
+    white-space: nowrap; /* 防止时间换行 */
+}
+
+#date {
+    font-size: 1em;
+    white-space: nowrap; /* 防止日期换行 */
+}
+
+#system-week {
+    font-size: 1em;
+}
+
+/* 大屏幕下的时间卡片优化 */
+@media screen and (min-width: 1401px) {
+    #card-body {
+        gap: 1.5rem;
+    }
+    
+    #clock-number {
+        font-size: 2em;
+        letter-spacing: 3px;
+    }
+    
+    #date {
+        font-size: 1.1em;
+    }
+    
+    #system-week {
+        font-size: 1.1em;
+    }
 }

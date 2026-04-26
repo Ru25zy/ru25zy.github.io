@@ -1,75 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="svg/icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="我的个人博客 - 展示CSS特效和在线应用">
+    <link rel="shortcut icon" href="svg/icon.svg" type="image/svg+xml">
     <title>我的个人博客</title>
     <link rel="stylesheet" href="StyleLibrary/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container-fluid">
-    <!-- navbar -->
-    <nav class="navbar navbar-dark bg-primary mb-3">
-        <div class="container-fluid">
-            <span class="navbar-brand fw-bolder" style="font-size: 2em">
-                <img src="svg/navigation.svg" width="32" height="32" alt="navigation">
-                我的个人博客
-            </span>
-        </div>
-    </nav>
-    <!-- Content -->
-    <div class="row ">
-        <div class="col-1"></div>
-        <!-- Left Content -->
-        <div class="col-7">
-            <div id="content-list" class="list-group"></div>
-        </div>
-        <!-- Right sidebar -->
-        <div class="col-3">
-            <!-- Time Card -->
-            <div class="card">
-                <div class="card-header">
-                    系统时间:
-                </div>
-                <div class="card-body row" id="card-body">
-                    <div class="col-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
-                             class="bi bi-clock" viewBox="0 0 16 16">
-                            <PATH id="minute-hand" d="M-0.5 0 A0.5 0.5 0 0 0 0.5 0V-5.5A0.5 0.5 0 0 0 -0.5 -5.5z"
-                                  transform="translate(8,8) rotate(45)" opacity="0.8"></PATH>
-                            <PATH id="hour-hand" d="M-0.6 0 A0.6 0.6 0 0 0 0.6 0V-3A0.6 0.6 0 0 0 -0.6 -3z"
-                                  transform="translate(8,8)"></PATH>
-                            <path d="M-8 0 A8 8 0 0 1 8 0 A8 8 0 0 1 -8 0 M-7 0A7 7 0 0 0 7 0 A7 7 0 0 0 -7 0z"
-                                  transform="translate(8,8)"/>
-                            <path d="M-1 0A1 1 0 0 0 1 0 A1 1 0 0 0 -1 0z" transform="translate(8,8)" opacity="0.7"/>
-                        </svg>
-                    </div>
-                    <div class="col-9 text-end">
-                        <div id="clock-number">
-                            <span id="system-hour"></span>
-                            <span>:</span>
-                            <span id="system-minute"></span>
-                            <span>:</span>
-                            <span id="system-second"></span>
-                        </div>
-                        <div id="date">
-                            <span id="system-year"></span>
-                            <span>年</span>
-                            <span id="system-month"></span>
-                            <span>月</span>
-                            <span id="system-day"></span>
-                            <span>日</span>
-                        </div>
-                        <div>
-                            <span id="system-week"></span>
-                        </div>
-                    </div>
-                </div>
+<header>
+    <div class="container-fluid">
+        <!-- navbar -->
+        <nav class="navbar navbar-dark bg-primary mb-3 py-2" role="navigation" aria-label="主导航">
+            <div class="container-fluid">
+                <span class="navbar-brand fw-bolder" style="font-size: 1.5em">
+                    <img src="svg/navigation.svg" width="24" height="24" alt="导航图标">
+                    我的个人博客
+                </span>
             </div>
-        </div>
-        <div class="col-1"></div>
+        </nav>
     </div>
+</header>
+    <!-- Main Content -->
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-md-1 col-lg-2"></div>
+            <!-- Left Content - Article List -->
+            <div class="col-md-7 col-lg-6">
+                <section aria-label="文章列表">
+                    <div id="content-list" class="list-group" role="list"></div>
+                </section>
+            </div>
+            <!-- Right sidebar -->
+            <div class="col-md-3 col-lg-2">
+                <!-- Time Card -->
+                <aside aria-label="系统时间">
+                    <div class="card">
+                        <div class="card-header">
+                            系统时间:
+                        </div>
+                        <div class="card-body row" id="card-body">
+                            <div class="col-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
+                                     class="bi bi-clock" viewBox="0 0 16 16" aria-hidden="true">
+                                    <PATH id="minute-hand" d="M-0.5 0 A0.5 0.5 0 0 0 0.5 0V-5.5A0.5 0.5 0 0 0 -0.5 -5.5z"
+                                          transform="translate(8,8) rotate(45)" opacity="0.8"></PATH>
+                                    <PATH id="hour-hand" d="M-0.6 0 A0.6 0.6 0 0 0 0.6 0V-3A0.6 0.6 0 0 0 -0.6 -3z"
+                                          transform="translate(8,8)"></PATH>
+                                    <path d="M-8 0 A8 8 0 0 1 8 0 A8 8 0 0 1 -8 0 M-7 0A7 7 0 0 0 7 0 A7 7 0 0 0 -7 0z"
+                                          transform="translate(8,8)"/>
+                                    <path d="M-1 0A1 1 0 0 0 1 0 A1 1 0 0 0 -1 0z" transform="translate(8,8)" opacity="0.7"/>
+                                </svg>
+                            </div>
+                            <div class="col-9 text-end">
+                                <div id="clock-number" aria-live="polite" class="mb-2">
+                                    <span id="system-hour"></span>
+                                    <span>:</span>
+                                    <span id="system-minute"></span>
+                                    <span>:</span>
+                                    <span id="system-second"></span>
+                                </div>
+                                <div id="date" class="mb-1">
+                                    <span id="system-year"></span>
+                                    <span>年</span>
+                                    <span id="system-month"></span>
+                                    <span>月</span>
+                                    <span id="system-day"></span>
+                                    <span>日</span>
+                                </div>
+                                <div>
+                                    <span id="system-week"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-md-1 col-lg-2"></div>
+        </div>
+    </main>
 </div>
 <script src="js/unification.js"></script>
 <script src="js/listItem.js"></script>

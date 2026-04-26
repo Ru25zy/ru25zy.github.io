@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Tower Defense</title>
     <link rel="stylesheet" href="../../StyleLibrary/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<header>
+    <nav class="navbar navbar-dark bg-primary mb-3 py-2">
+        <div class="container-fluid">
+            <span class="navbar-brand fw-bolder" style="font-size: 1.5em">
+                <img src="../../svg/navigation.svg" width="24" height="24" alt="导航图标">
+                我的个人博客
+            </span>
+            <a class="nav-link text-white" href="../../index.html">返回首页</a>
+        </div>
+    </nav>
+</header>
 <div id="canvasContainer">
     <canvas id="tower"></canvas>
     <canvas id="enemy"></canvas>
