@@ -11,6 +11,34 @@
 /** @type {PageItem[]} */
 const items = [
     {
+        href: "Pages/border_radius/index.html",
+        title: "Border Radius",
+        time: "2026.04.26",
+        category: "CSS",
+        describe: "CSS 圆角边框演示工具。"
+    },
+    {
+        href: "Pages/tetris/index.html",
+        title: "俄罗斯方块",
+        time: "2026.04.26",
+        category: "在线应用",
+        describe: "经典的俄罗斯方块游戏。"
+    },
+    {
+        href: "Pages/memoryCards/index.html",
+        title: "翻牌配对",
+        time: "2026.04.26",
+        category: "在线应用",
+        describe: "记忆翻牌配对游戏。"
+    },
+    {
+        href: "Pages/textFormatting/index.html",
+        title: "格式化文本",
+        time: "2026.04.26",
+        category: "在线应用",
+        describe: "文本格式化工具。"
+    },
+    {
         href: "Pages/RingRose/index.html",
         title: "Ring Rose",
         time: "2022.08.31",

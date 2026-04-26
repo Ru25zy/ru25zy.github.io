@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>翻牌配对</title>
+    <link rel="icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../assets/css/base.css"></link>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+ 
+<body>
+<!-- 动画背景层 -->
+<div id="background-animation"></div>
+<div class="container">
+    <div id="gamer">
+        <div id="information"></div>
+        <div id="game-container"  class="game-rows-container"></div>
+        <!-- 添加重新开始按钮 -->
+        <button id="restart-btn" class="restart-btn hidden">重新开始</button>
+    </div>
+    <footer class="footer">
+        <a href="../../index.html" class="button-link">返回主页</a>
+    </footer>
+</div>
+
+<!-- 通用弹窗 -->
+<div id="popup" class="popup hidden">
+    <div class="popup-content">
+        <h2 id="popup-title">翻牌配对游戏</h2>
+        <p id="popup-message">请选择难度，然后开始游戏</p>
+
+        <div class="setting-item">
+            <label for="difficulty-select">选择难度</label>
+            <select name="difficulty" id="difficulty-select">
+                <option value="easy">简单</option>
+                <option value="normal">普通</option>
+                <option value="hard">困难</option>
+            </select>
+        </div>
+
+        <button id="popup-action-btn">开始游戏</button>
+    </div>
+</div>
+<script src="./assets/js/script.js"></script>
+</body>
+</html>

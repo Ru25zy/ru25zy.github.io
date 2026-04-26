@@ -1,0 +1,279 @@
+:root {
+    --primary-color: #00adb5;
+    --card-size: 80px;
+    --bg-color: #222831;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body{ 
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    font-size: calc(12px + 1vmin);
+}
+
+.container{
+    position: fixed;
+    justify-content: center;
+}
+
+#gamer{
+    height: calc(100% - 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff1e;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    z-index: 2000;
+}
+
+.footer a{
+    position: relative;
+    z-index: 2000;
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer a:hover{
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.541);
+}
+
+/* 新增行容器样式 */
+.game-rows-container {
+    width: 80vmin;
+    height: 80vmin;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* 行容器样式 */
+.game-row {
+    flex: 1;
+    display: flex;
+    gap: 2px;
+    overflow: hidden;
+}
+
+/* 卡片样式优化 */
+.card {
+    flex: 1 0 auto; /* 自动伸缩填充容器 */
+    max-width: calc(100% / var(--cols)); /* 动态计算最大宽度 */
+    aspect-ratio: 1 / 1; /* 保持正方形比例 */
+    margin: 0;
+    padding: 0;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-back, .card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    border-radius: 8px;
+    user-select: none; /* 禁止选中 */
+    -webkit-user-select: none; /* 兼容 Safari */
+    -moz-user-select: none; /* 兼容 Firefox */
+    -ms-user-select: none; /* 兼容 IE/Edge */
+}
+
+.card-back {
+    background: #3498db;
+    color: white;
+}
+
+.card-front {
+    /* 使用动态字体大小 */
+    background: #f1c40f;
+    transform: rotateY(180deg);
+}
+
+#information{
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.information-item {
+    margin: 20px 0;
+    display: flex; /* 使用 flexbox 布局 */
+    align-items: center; /* 垂直居中对齐 */
+    white-space: nowrap; /* 禁止换行 */
+}
+
+.information-item label {
+    margin-right: 10px;
+}
+
+/* 通用弹窗样式 */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 3rem);
+    background-color: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.popup.hidden,
+.restart-btn.hidden {
+    display: none;
+}
+
+.popup-content {
+    width: 300px;
+    background:#98faffbb;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    color: #222831;
+}
+
+.popup-content h2 {
+    margin-top: 0;
+}
+
+.popup-content p {
+    margin: 15px 0;
+}
+
+.popup-content .setting-item {
+    margin: 20px 0;
+}
+
+.popup-content .info-item {
+    margin: 10px 0;
+}
+
+.popup-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.popup-content button:hover {
+    background: #0096a1;
+}
+
+.stats {
+    margin: 20px 0;
+}
+
+.stats p {
+    margin: 8px 0;
+}
+
+.restart-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.restart-btn:hover {
+    background: #0096a1;
+}
+
+/* 背景动画样式 */
+#background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 不阻挡点击事件 */
+    overflow: hidden;
+    z-index: 0; /* 确保在游戏内容之下 */
+}
+
+.background-square {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1); /* 半透明白块 */
+    border-radius: 8px;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: fadeInOut 3s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    30% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    70% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[/Border Radius/]</title>
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="Container">
+    <div class="Navigator">
+        <a class="Logo" href="../../index.html">/Border Radius/</a>
+    </div>
+    <div class="ContentContainer Full FlexCenter" style="flex-direction: column;justify-content: flex-start;">
+        <div class="RadiusContainer">
+            <div class="RadiusContainer">
+                <div class="RadiusContainerItem">
+                    <div class="RadiusLock" style="justify-content: flex-end;align-items: flex-end">
+                        <label class="LockContainer" id="LockTopLeft">
+                            <input type="checkbox">
+                            <span class="LockShackle"></span>
+                            <span class="LockBody"></span>
+                        </label>
+                    </div>
+                    <div class="RadiusTop">
+                        <div></div>
+                        <div class="InputContainer">
+                            <label for="RangeTopLeft"></label>
+                            <input id="RangeTopLeft" type="range" min="0" max="100" value="10">
+                            <label class="LockContainer" id="LockTop" style="position: relative">
+                                <input type="checkbox">
+                                <span class="LockShackle"></span>
+                                <span class="LockBody"></span>
+                            </label>
+                            <label for="RangeTopRight"></label>
+                            <input class="Rotate180" id="RangeTopRight" type="range" min="0" max="100" value="10">
+                        </div>
+                    </div>
+                    <div class="RadiusLock" style="align-items: flex-end;">
+                        <label class="LockContainer" id="LockTopRight">
+                            <input type="checkbox">
+                            <span class="LockShackle"></span>
+                            <span class="LockBody"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="RadiusContainerItem">
+                    <div class="RadiusRect ShowBorder" id="RadiusRect"></div>
+                </div>
+                <div class="RadiusContainerItem">
+                    <div class="RadiusLock" style="justify-content: flex-end;">
+                        <label class="LockContainer" id="LockBottomLeft">
+                            <input type="checkbox">
+                            <span class="LockShackle"></span>
+                            <span class="LockBody"></span>
+                        </label></div>
+                    <div class="RadiusBottom">
+                        <div class="InputContainer">
+                            <label for="RangeBottomLeft"></label>
+                            <input id="RangeBottomLeft" type="range" min="0" max="100" value="10">
+                            <label class="LockContainer" id="LockBottom"  style="position: relative">
+                                <input type="checkbox">
+                                <span class="LockShackle"></span>
+                                <span class="LockBody"></span>
+                            </label>
+                            <label for="RangeBottomRight"></label>
+                            <input class="Rotate180" id="RangeBottomRight" type="range" min="0" max="100" value="10">
+                        </div>
+                    </div>
+                    <div class="RadiusLock">
+                        <label class="LockContainer" id="LockBottomRight">
+                            <input type="checkbox">
+                            <span class="LockShackle"></span>
+                            <span class="LockBody"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="RadiusContainer Rotate90" style="position: absolute;">
+                <div class="RadiusContainerItem">
+                    <div class="RadiusTop">
+                        <div></div>
+                        <div class="InputContainer">
+                            <label for="RangeRightTop"></label>
+                            <input id="RangeRightTop" type="range" min="0" max="100" value="10">
+                            <label class="LockContainer" id="LockRight"  style="position: relative;transform: rotate(-90deg);">
+                                <input type="checkbox">
+                                <span class="LockShackle"></span>
+                                <span class="LockBody"></span>
+                            </label>
+                            <label for="RangeRightBottom"></label>
+                            <input class="Rotate180" id="RangeRightBottom" type="range" min="0" max="100" value="10">
+                        </div>
+                    </div>
+                </div>
+                <div class="RadiusContainerItem">
+                    <div class="RadiusRect"></div>
+                </div>
+                <div class="RadiusContainerItem">
+                    <div class="RadiusBottom">
+                        <div class="InputContainer">
+                            <label for="RangeLeftTop"></label>
+                            <input id="RangeLeftTop" type="range" min="0" max="100" value="10">
+                            <label class="LockContainer" id="LockLeft"  style="position: relative;transform: rotate(-90deg);">
+                                <input type="checkbox">
+                                <span class="LockShackle"></span>
+                                <span class="LockBody"></span>
+                            </label>
+                            <label for="RangeLeftBottom"></label>
+                            <input class="Rotate180" id="RangeLeftBottom" type="range" min="0" max="100" value="10">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="RadiusContainer" style="align-items: flex-start;">
+            <div Class="CodeContainer">
+                <div class="CodeHeader">
+                    <div class="ThreeCircle"></div>
+                     <div class="LockContainer" onclick="CopyCode()"
+                          style="padding:0.12rem 0.5rem;position: relative;width: auto;height: auto">复制</div>
+                </div>
+                <div class="CodeBlock" id="CodeBlock">
+                    <span class="CodeLine"><span class="CodeClassName">.Box</span><span>&ensp;{</span></span>
+                    <span class="CodeLine">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<span class="CodeProperties">width</span>
+                        <span>:&ensp;</span>
+                        <span class="CodeValue" id="ValueWidth">100px</span><span>;</span></span>
+                    <span class="CodeLine">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<span class="CodeProperties">height</span>
+                        <span>:&ensp;</span>
+                        <span class="CodeValue" id="ValueHeight">100px</span><span>;</span></span>
+                    <span class="CodeLine">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<span class="CodeProperties">border-radius</span>
+                        <span>:&ensp;</span>
+                        <span class="CodeValue" id="ValueRadius" >{}<span>;</span></span></span>
+                    <span class="CodeLine"><span>}</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

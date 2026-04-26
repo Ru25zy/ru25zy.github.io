@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* 修改 --width-logo 的值使 LOGO 的长度与内容匹配 */
+    --width-logo: 10em;
+    --height-logo: 2em;
+    --color-background: #e9e9e3;
+    --height-nav: 3rem;
+    --font-size: calc(16px + 1vmin);
+    --height-content: calc(100vh - var(--height-nav) * 3 - 1rem);
+    --width-content: 80vw;
+}
+
+body {
+    overflow-x: hidden;
+    font-size: var(--font-size);
+    background-color: var(--color-background);
+}
+
+a {
+    font-family: 微软雅黑, monospace;
+    font-weight: bolder;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #9f9f9f;
+}
+
+.FlexLeftTop{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.FlexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FlexColumn {
+    flex-direction: column;
+}
+
+.Container {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Container .Full{
+    height: 100vh;
+}
+
+.Navigator {
+    overflow: hidden;
+    margin-bottom: 5px;
+    width: var(--width-content);
+    height: var(--height-nav);
+    display: flex;
+    align-items: center;
+}
+
+/* Logo 的样式 */
+
+.Logo {
+    font-size: 1rem;
+    overflow: hidden;
+    width: var(--width-logo);
+    height: var(--height-logo);
+    background-color: var(--color-background);
+    border: 0.35em solid black;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.Logo::before, .Logo::after {
+    content: "";
+    position: absolute;
+    display: flex;
+    border-width: var(--height-logo);
+    border-style: solid;
+    transition: all 0.3s;
+}
+
+.Logo::before {
+    width: var(--width-logo);
+    height: calc(var(--height-logo) - 1em);
+    border-color: transparent var(--color-background);
+}
+
+.Logo::after {
+    width: calc(var(--width-logo) - 1em);
+    height: 2em;
+    border-color: var(--color-background) transparent;
+}
+
+.Logo:hover {
+    color: darkred;
+    border-color: darkred;
+}
+
+.Logo:hover::before {
+    height: var(--height-logo);
+}
+
+.Logo:hover::after {
+    width: calc(var(--width-logo) - 3em);
+}
+
+.ContentContainer {
+    position: relative;
+    padding-top: 1rem;
+    margin-bottom: calc(var(--height-nav) + 5px);
+    width: var(--width-content);
+    font-size: 1rem;
+    border-top: 1px solid #c3c6ce;
+}
+
+.ContentContainer.Full {
+    height: var(--height-content);
+}
+
+/******************************/
+
+.Card-Type-Red {
+    padding: 1rem 0.5rem;
+    border: 0.2em solid rgba(140, 7, 31, 1);
+    box-shadow: 0.1em 0.1em 0 rgba(255, 255, 255, 1),
+    0.2em 0.2em 0 rgba(140, 7, 31, 1);
+}
+
+.Card-Type-Red  hr {
+    width: 100%;
+    border: 1px solid rgba(140, 7, 31, 1);
+}
+
+.Card-Type-Red-Title {
+    padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-size: 1.5rem;
+    color: rgba(140, 7, 31, 1);
+    text-shadow: 0.01em 0.01em 0 rgba(255, 255, 255, 1),
+    0.03em 0.03em 0 rgba(140, 7, 31, 1);
+    font-weight: bold;
+}
+
+.Card-Type-Red-Body {
+    padding-top: 1rem;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 730px) {
+    .Navigator, .Container .Full{
+        width: 100%;
+    }
+}
+
+
+
+/* 圆角样式 */
+
+.Logo{
+    --width-logo: 12rem;
+}
+
+.RadiusContainer {
+    --width-radius-rect: 50vmin;
+    --width-half-radius-rect: calc(var(--width-radius-rect) / 2);
+    --height-radius-rect: 50vmin;
+    --width-lock-rect: calc(10px + 5vmin);
+    --width-half-lock-rect: calc(var(--width-lock-rect) / 2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.RadiusContainerItem {
+    display: flex;
+}
+
+.RadiusRect {
+    width: var(--width-radius-rect);
+    height: var(--height-radius-rect);
+    transition: all 0.2s;
+}
+
+.RadiusTop, .RadiusBottom {
+    width: var(--width-radius-rect);
+    height: var(--width-lock-rect);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.RadiusTop > div, .RadiusBottom > div {
+    width: var(--width-radius-rect);
+    height: var(--width-half-lock-rect);
+}
+
+.RadiusLock {
+    width: var(--width-lock-rect);
+    height: var(--width-lock-rect);
+    display: flex;
+}
+
+.InputContainer {
+    display: flex;
+}
+
+.InputContainer > input {
+    width: calc(var(--width-half-radius-rect) - var(--width-half-lock-rect) / 2);
+}
+
+.CodeContainer{
+    padding: 0 1rem 1rem 1rem;
+    width: var(--width-radius-rect);
+    background-color: #fafafa;
+    box-shadow: 0 5px 5px 0 #00000026;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CodeHeader{
+    margin: 1rem 0;
+    width: var(--width-radius-rect);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CodeContainer > .CodeBlock{
+    font-family: Consolas, monospace;
+}
+
+.ThreeCircle {
+    width: 12px;
+    height: 12px;
+    background-color: #3b82f6;
+    box-shadow: 1em 0 0 #a855f7, 2em 0 0 #ec4899;
+    border-radius: 50%;
+}
+
+.CodeLine{
+    width: calc(var(--width-radius-rect) - 1rem);
+    display: flex;
+}
+
+.CodeClassName{
+    color: #986801;
+}
+
+.CodeProperties{
+    color:#4078f2;
+    white-space: nowrap;
+}
+
+.CodeValue{
+    color: #993d3d;
+}
+
+/*Tools*/
+
+.Rotate90 {
+    transform: rotate(90deg);
+}
+
+.Rotate180 {
+    transform: rotate(180deg);
+}
+
+.ShowBorder {
+    background-color: blueviolet;
+}
+
+/*lock*/
+
+/* Hide the default checkbox */
+.LockContainer input {
+    opacity: 0;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+}
+
+.LockContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    user-select: none;
+    width: var(--width-half-lock-rect);
+    height: var(--width-half-lock-rect);
+    border-radius: 3px;
+    background: rgba(216, 216, 216, 0.603);
+    box-shadow: 1px 1px 2px #9b9b9b;
+    transition: all 0.3s;
+}
+
+.LockContainer:active {
+    box-shadow: inset 0 0 5px #9b9b9b;
+}
+
+.LockShackle, .LockBody{
+    position: relative;
+    transform: translateX(0);
+    transition: all 0.6s;
+}
+
+.LockShackle{
+    margin-bottom: -20%;
+    width: 25%;
+    height: 30%;
+    border-radius: 50% 50% 0 0;
+    border-width: calc(var(--width-half-lock-rect) / 10);
+    border-style: solid;
+    border-color: #767676 transparent #767676 #767676 ;
+    transition: all 0.3s;
+}
+
+.LockBody {
+    width: 55%;
+    height: 40%;
+    background: #767676;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LockBody:before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+    background-color: var(--color-background);
+    display: flex;
+}
+
+.LockContainer>input:checked~.LockShackle{
+    border-color: #767676 #767676 #767676 #767676 ;
+}

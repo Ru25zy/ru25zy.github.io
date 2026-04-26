@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>格式化文本</title>
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+<div class="container">
+    <aside>
+        <div class="row-container right">
+            <label class="burger" for="burger">
+                <input type="checkbox" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <div class="aside-main">
+            <a class="button" href="../../index.html">返回主页</a>
+            <div class="row-container">
+                <div class="input-title-container">
+                    <label for="wrap-symbol" class="input-name">换行符号:</label>
+                    <div class="input-container">
+                        <input type="text" id="wrap-symbol" class="input-text" value="">
+                        <div class="button input-button" id="wrap-button">换行猜测</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-container">
+                <label class="checkbox-container">
+                    <input class="custom-checkbox" checked="" type="checkbox" id="check-ignore-warp">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="input-prefix-container">
+                    <span class="input-prefix">猜测忽略前</span>
+                    <label for="wrap-ignore-line"></label>
+                    <input type="number" id="wrap-ignore-line" class="input-number" value="3">
+                    <span class="input-suffix">行</span>
+                </div>
+            </div>
+            <hr>
+            <div class="row-container">
+                <div class="input-prefix">段落缩进设置</div>
+                <div id="btn-indent" class="button middle">有缩进</div>
+                <div id="btn-no-indent" class="button suffix">无缩进</div>
+            </div>
+            <div class="row-container">
+                <div class="input-prefix">段落空行设置</div>
+                <div id="btn-line" class="button middle">有空行</div>
+                <div id="btn-no-line" class="button suffix">无空行</div>
+            </div>
+            <hr/>
+            <div class="row-container">
+                <div class="input-prefix">中文繁简转换</div>
+                <div id="btn-simplified" class="button middle">简体</div>
+                <div id="btn-traditional" class="button suffix">繁体</div>
+            </div>
+            <hr>
+            <div class="row-container">
+                <div class="input-prefix">英文字母转换</div>
+                <div id="btn-half-character" class="button middle">半角</div>
+                <div id="btn-full-character" class="button suffix">全角</div>
+            </div>
+            <div class="row-container">
+                <div class="input-prefix">数字字符转换</div>
+                <div id="btn-half-number" class="button middle">半角</div>
+                <div id="btn-full-number" class="button suffix">全角</div>
+            </div>
+        </div>
+    </aside>
+    <article>
+        <label for="textarea"></label>
+        <textarea id="textarea" placeholder="请输入内容..."></textarea>
+        <div id="status-bar">
+            <div class="status">中文字符：<span id="char-count">0</span></div>
+            <div class="status">英文单词：<span id="word-count">0</span></div>
+            <div class="status">符号统计：<span id="symbol-count">0</span></div>
+        </div>
+    </article>
+</div>
+<script src="./assets/cnchar.min.js"></script>
+<script src="./assets/cnchar.trad.min.js"></script>
+<script src="./assets/script.js"></script>
+</body>
+</html>
